@@ -13,6 +13,7 @@ interface GymCardProps {
   reviewCount: number;
   equipmentCount: number;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 const GymCard: React.FC<GymCardProps> = ({ 
@@ -23,7 +24,8 @@ const GymCard: React.FC<GymCardProps> = ({
   rating, 
   reviewCount, 
   equipmentCount,
-  className
+  className,
+  style
 }) => {
   return (
     <Link 
@@ -32,6 +34,7 @@ const GymCard: React.FC<GymCardProps> = ({
         "gym-card group block overflow-hidden h-full", 
         className
       )}
+      style={style}
     >
       <div className="aspect-video w-full overflow-hidden">
         <img 
