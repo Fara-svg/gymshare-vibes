@@ -4,6 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Search, MapPin, Star, Dumbbell, ArrowRight } from 'lucide-react';
 import GymCard from '@/components/GymCard';
+import InfluencerRecommendation from '@/components/InfluencerRecommendation';
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
 
 // Sample data for featured gyms
 const featuredGyms = [
@@ -33,6 +41,62 @@ const featuredGyms = [
     rating: 4.9,
     reviewCount: 156,
     equipmentCount: 52
+  }
+];
+
+// Sample data for influencer recommendations
+const influencerRecommendations = [
+  {
+    influencerName: "Alex Fitness",
+    influencerImage: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80",
+    influencerFollowers: "125K",
+    gymName: "Elevate Fitness Club",
+    gymImage: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    rating: 4.9,
+    facilities: "Top-notch equipment with dedicated zones for strength, cardio, and functional training.",
+    atmosphere: "Energetic and motivating with great music and friendly staff.",
+    cleanliness: "Spotlessly clean with regular equipment sanitization and well-maintained changing rooms.",
+    membershipFlexibility: "Flexible monthly plans with no long-term commitment required.",
+    pricing: "$89/month with student and corporate discounts available."
+  },
+  {
+    influencerName: "Samantha Strong",
+    influencerImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80",
+    influencerFollowers: "89K",
+    gymName: "Urban Strength Collective",
+    gymImage: "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    rating: 4.7,
+    facilities: "Excellent free weight area with competition-grade equipment and specialized lifting platforms.",
+    atmosphere: "Serious training environment perfect for dedicated lifters.",
+    cleanliness: "Very well maintained with regular cleaning throughout the day.",
+    membershipFlexibility: "Monthly and annual plans with a 7-day free trial for new members.",
+    pricing: "$75/month with discounts for 6-month commitments."
+  },
+  {
+    influencerName: "Mike Muscle",
+    influencerImage: "https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80",
+    influencerFollowers: "212K",
+    gymName: "PowerFlex Gym",
+    gymImage: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    rating: 4.8,
+    facilities: "Huge selection of machines and free weights with 24/7 access and dedicated CrossFit area.",
+    atmosphere: "Welcoming to all fitness levels with a supportive community feel.",
+    cleanliness: "Excellent standards with staff regularly sanitizing equipment and areas.",
+    membershipFlexibility: "Flexible options including day passes and various membership tiers.",
+    pricing: "$65/month with family plan discounts and corporate rates."
+  },
+  {
+    influencerName: "Fitness Fanatic",
+    influencerImage: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80",
+    influencerFollowers: "78K",
+    gymName: "The Fitness Hub",
+    gymImage: "https://images.unsplash.com/photo-1637666062717-1c6bcfa4a4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    rating: 4.6,
+    facilities: "Modern equipment with great variety and specialized studios for classes.",
+    atmosphere: "Vibrant and social with a mix of serious trainers and casual gym-goers.",
+    cleanliness: "Well-maintained facilities with regular cleaning and modern locker rooms.",
+    membershipFlexibility: "Pay-as-you-go options or monthly memberships with easy cancellation.",
+    pricing: "$79/month with free personal training session for new members."
   }
 ];
 
@@ -148,6 +212,42 @@ const Index = () => {
                 Check equipment availability and quality before you visit, saving you time and disappointment.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Influencer Recommendations Section */}
+      <section className="py-20 bg-gradient-to-b from-secondary to-background">
+        <div className="container mx-auto">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-semibold mb-4">Influencer Recommendations</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              See what fitness influencers are saying about local gyms
+            </p>
+          </div>
+          
+          <div className="mt-10 px-4 md:px-10">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {influencerRecommendations.map((rec, index) => (
+                  <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                    <div className="animate-slide-up" style={{ animationDelay: `${index * 150}ms` }}>
+                      <InfluencerRecommendation {...rec} />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex justify-center gap-2 mt-8">
+                <CarouselPrevious className="relative static -translate-y-0 left-0" />
+                <CarouselNext className="relative static -translate-y-0 right-0" />
+              </div>
+            </Carousel>
           </div>
         </div>
       </section>
