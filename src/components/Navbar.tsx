@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Dumbbell, User, Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,8 +57,9 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-foreground"
+          className="md:hidden text-foreground p-2 rounded-full hover:bg-background/10"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -64,27 +67,27 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg animate-slide-down">
-          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+        <div className="md:hidden fixed top-16 left-0 right-0 bottom-0 bg-white/95 backdrop-blur-sm z-40 animate-in slide-in-from-top duration-300">
+          <div className="container mx-auto px-4 py-8 flex flex-col space-y-6">
             <Link 
               to="/" 
-              className="py-2 text-foreground/80 hover:text-primary transition-colors"
+              className="py-3 px-4 text-lg font-medium text-foreground/80 hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
             </Link>
             <Link 
               to="/gyms" 
-              className="py-2 text-foreground/80 hover:text-primary transition-colors"
+              className="py-3 px-4 text-lg font-medium text-foreground/80 hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Find Gyms
             </Link>
-            <div className="pt-2 flex flex-col space-y-3">
-              <Button variant="ghost" className="justify-start">
+            <div className="pt-4 flex flex-col space-y-4 mt-auto">
+              <Button variant="ghost" size="lg" className="w-full justify-center text-lg">
                 Sign In
               </Button>
-              <Button className="bg-primary text-white w-full">
+              <Button size="lg" className="bg-primary text-white w-full text-lg">
                 Sign Up
               </Button>
             </div>

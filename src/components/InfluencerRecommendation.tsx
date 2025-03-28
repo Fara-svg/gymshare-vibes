@@ -3,6 +3,7 @@ import React from 'react';
 import { Avatar } from "@/components/ui/avatar";
 import { Star, Dumbbell, Smile, Calendar, DollarSign } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 export interface InfluencerRecommendationProps {
   influencerName: string;
@@ -35,6 +36,8 @@ const InfluencerRecommendation: React.FC<InfluencerRecommendationProps> = ({
   className,
   style
 }) => {
+  const isMobile = useIsMobile();
+  
   // Function to render rating stars
   const renderRatingStars = (rating: number) => {
     const stars = [];
@@ -53,6 +56,7 @@ const InfluencerRecommendation: React.FC<InfluencerRecommendationProps> = ({
     <div 
       className={cn(
         "bg-white rounded-2xl shadow-md overflow-hidden border border-border transition-all duration-300 hover:shadow-lg",
+        isMobile ? "w-[85vw] mx-auto" : "",
         className
       )}
       style={style}
