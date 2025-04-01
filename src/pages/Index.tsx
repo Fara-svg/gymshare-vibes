@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Search, MapPin, Star, Dumbbell, ArrowRight } from 'lucide-react';
+import { Search, MapPin, Star, Dumbbell, ArrowRight, Users, Heart, Sparkles } from 'lucide-react';
 import GymCard from '@/components/GymCard';
 import InfluencerRecommendation from '@/components/InfluencerRecommendation';
 import { 
@@ -105,45 +106,98 @@ const Index = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="pt-28 pb-20 md:pt-40 md:pb-32 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center space-y-6 animate-fade-in">
-            <div className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full font-medium text-sm mb-4">
-              Find your perfect gym today
+      <section className="relative">
+        {/* Hero Image Background */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-background/90 to-background/70" />
+          <img 
+            src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
+            alt="People using GymShare to find gyms"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        <div className="relative z-10 pt-32 pb-28 md:pt-48 md:pb-36 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <div className="text-center space-y-6 animate-fade-in">
+              <div className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full font-medium text-sm mb-4">
+                Find your perfect gym today
+              </div>
+              <h1 className="text-4xl md:text-6xl font-semibold leading-tight md:leading-tight text-balance max-w-4xl mx-auto">
+                Your passport to a world of fitness!
+                Share and access top-rated gyms with just a QR code
+              </h1>
+              <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
+                GymShare connects you to trusted gym influencers, real-time facility insights, and flexible membership options—empowering you to work out where and when you want.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+                <Button 
+                  size="lg" 
+                  className="rounded-full text-base px-8 gap-2" 
+                  onClick={() => navigate('/gyms')}
+                >
+                  Explore Gyms
+                  <ArrowRight size={18} />
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="rounded-full text-base px-8 bg-background/80 backdrop-blur-sm hover:bg-background/90"
+                >
+                  Learn More
+                </Button>
+              </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-semibold leading-tight md:leading-tight text-balance max-w-4xl mx-auto">
-              Your passport to a world of fitness!
-              Share and access top-rated gyms with just a QR code
-            </h1>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
-              GymShare connects you to trusted gym influencers, real-time facility insights, and flexible membership options—empowering you to work out where and when you want.
+          </div>
+        </div>
+      </section>
+
+      {/* Community Benefits Section */}
+      <section className="py-16 bg-secondary">
+        <div className="container mx-auto">
+          <div className="mb-10 text-center">
+            <h2 className="text-3xl font-semibold mb-4">Join Our Fitness Community</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Connect with like-minded fitness enthusiasts and enjoy flexible access to premium gyms
             </p>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
-              Your passport to a world of fitness, allowing you to seamlessly discover, compare, and access top-rated gyms with just a QR code.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-              <Button 
-                size="lg" 
-                className="rounded-full text-base px-8 gap-2" 
-                onClick={() => navigate('/gyms')}
-              >
-                Explore Gyms
-                <ArrowRight size={18} />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="rounded-full text-base px-8"
-              >
-                Learn More
-              </Button>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-background rounded-xl p-8 shadow-sm flex flex-col items-center text-center">
+              <div className="bg-primary/10 p-4 rounded-full mb-5">
+                <Users className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-medium mb-3">Social Community</h3>
+              <p className="text-muted-foreground">
+                Connect with gym enthusiasts, follow your favorite influencers, and join workout groups near you.
+              </p>
+            </div>
+            
+            <div className="bg-background rounded-xl p-8 shadow-sm flex flex-col items-center text-center">
+              <div className="bg-primary/10 p-4 rounded-full mb-5">
+                <Heart className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-medium mb-3">Flexible Access</h3>
+              <p className="text-muted-foreground">
+                Use your QR code to access multiple premium gyms without being tied to a single location or contract.
+              </p>
+            </div>
+            
+            <div className="bg-background rounded-xl p-8 shadow-sm flex flex-col items-center text-center">
+              <div className="bg-primary/10 p-4 rounded-full mb-5">
+                <Sparkles className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-medium mb-3">Curated Recommendations</h3>
+              <p className="text-muted-foreground">
+                Discover gyms tailored to your preferences and backed by trustworthy community reviews.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Gyms Section */}
-      <section className="py-16 bg-secondary">
+      <section className="py-16">
         <div className="container mx-auto">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-semibold mb-4">Featured Gyms</h2>
@@ -176,7 +230,7 @@ const Index = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20">
+      <section className="py-20 bg-secondary/50">
         <div className="container mx-auto">
           <div className="mb-16 text-center">
             <h2 className="text-3xl font-semibold mb-4">How GymShare Works</h2>
@@ -220,7 +274,7 @@ const Index = () => {
       </section>
 
       {/* Influencer Recommendations Section */}
-      <section className="py-20 bg-gradient-to-b from-secondary to-background">
+      <section className="py-20">
         <div className="container mx-auto">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-semibold mb-4">Influencer Recommendations</h2>
