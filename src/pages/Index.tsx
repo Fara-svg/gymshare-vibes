@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -116,7 +115,10 @@ const Index = () => {
               Discover and share the best gyms in your community
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
-              Connect with fellow fitness enthusiasts, share honest gym reviews, and find the perfect training spot for your needs.
+              GymShare connects you to trusted gym influencers, real-time facility insights, and flexible membership options—empowering you to work out where and when you want.
+            </p>
+            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
+              Your passport to a world of fitness, allowing you to seamlessly discover, compare, and access top-rated gyms with just a QR code.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
               <Button 
