@@ -35,7 +35,7 @@ const featuredGyms = [
   {
     id: "3",
     name: "Elite Training Center",
-    image: "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    image: "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
     location: "Marina District, San Francisco",
     rating: 4.9,
     reviewCount: 156,
@@ -47,10 +47,10 @@ const featuredGyms = [
 const influencerRecommendations = [
   {
     influencerName: "Alex Fitness",
-    influencerImage: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80",
+    influencerImage: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80",
     influencerFollowers: "125K",
     gymName: "Elevate Fitness Club",
-    gymImage: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    gymImage: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
     rating: 4.9,
     facilities: "Top-notch equipment with dedicated zones for strength, cardio, and functional training.",
     atmosphere: "Energetic and motivating with great music and friendly staff.",
@@ -60,10 +60,10 @@ const influencerRecommendations = [
   },
   {
     influencerName: "Samantha Strong",
-    influencerImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80",
+    influencerImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80",
     influencerFollowers: "89K",
     gymName: "Urban Strength Collective",
-    gymImage: "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    gymImage: "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
     rating: 4.7,
     facilities: "Excellent free weight area with competition-grade equipment and specialized lifting platforms.",
     atmosphere: "Serious training environment perfect for dedicated lifters.",
@@ -73,10 +73,10 @@ const influencerRecommendations = [
   },
   {
     influencerName: "Mike Muscle",
-    influencerImage: "https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80",
+    influencerImage: "https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80",
     influencerFollowers: "212K",
     gymName: "PowerFlex Gym",
-    gymImage: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    gymImage: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
     rating: 4.8,
     facilities: "Huge selection of machines and free weights with 24/7 access and dedicated CrossFit area.",
     atmosphere: "Welcoming to all fitness levels with a supportive community feel.",
@@ -86,10 +86,10 @@ const influencerRecommendations = [
   },
   {
     influencerName: "Fitness Fanatic",
-    influencerImage: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80",
+    influencerImage: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80",
     influencerFollowers: "78K",
     gymName: "The Fitness Hub",
-    gymImage: "https://images.unsplash.com/photo-1637666062717-1c6bcfa4a4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    gymImage: "https://images.unsplash.com/photo-1637666062717-1c6bcfa4a4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
     rating: 4.6,
     facilities: "Modern equipment with great variety and specialized studios for classes.",
     atmosphere: "Vibrant and social with a mix of serious trainers and casual gym-goers.",
@@ -112,7 +112,7 @@ const Index = () => {
               Find your perfect gym today
             </div>
             <h1 className="text-4xl md:text-6xl font-semibold leading-tight md:leading-tight text-balance max-w-4xl mx-auto">
-              Discover and share the best gyms in your community
+              Your passport to a world of fitness, allowing you to seamlessly discover, share and access top-rated gyms with just a QR code
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
               GymShare connects you to trusted gym influencers, real-time facility insights, and flexible membership options—empowering you to work out where and when you want.
