@@ -26,7 +26,7 @@ const featuredGyms = [
   {
     id: "2",
     name: "Power House Gym",
-    image: "https://images.unsplash.com/photo-1570829460005-c840387bb1ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80",
+    image: "https://images.unsplash.com/photo-1570829460005-c840387bb1ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80",
     location: "Midtown, Chicago",
     rating: 4.5,
     reviewCount: 89,
@@ -112,7 +112,8 @@ const Index = () => {
               Find your perfect gym today
             </div>
             <h1 className="text-4xl md:text-6xl font-semibold leading-tight md:leading-tight text-balance max-w-4xl mx-auto">
-              Your passport to a world of fitness, allowing you to seamlessly discover, share and access top-rated gyms with just a QR code
+              Your passport to a world of fitness!
+              Share and access top-rated gyms with just a QR code
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
               GymShare connects you to trusted gym influencers, real-time facility insights, and flexible membership options—empowering you to work out where and when you want.
